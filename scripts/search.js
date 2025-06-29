@@ -49,7 +49,7 @@ searchWith.addEventListener("click", function (event) {
 function toggleSearchEngines(category) {
     const defaultItems = {
         "search-with": "engine4",
-        "search-on": "engine5",
+        "search-on": "engine8",
     };
     const checkeditem = localStorage.getItem(`selectedSearchEngine-${category}`) || defaultItems[category];
     const searchModeName = category === "search-with" ? "searchWithHint" : "searchOnHint";
@@ -194,15 +194,8 @@ document.addEventListener("DOMContentLoaded", () => {
         var searchTerm = searchInput.value;
         const languageCode = (localStorage.getItem("selectedLanguage") || "en").slice(0, 2);
         var searchEngines = {
-            engine1: "https://www.google.com/search?q=",
-            engine2: "https://duckduckgo.com/?q=",
-            engine3: "https://bing.com/?q=",
             engine4: "https://search.brave.com/search?q=",
-            engine5: "https://www.youtube.com/results?search_query=",
-            engine6: "https://www.google.com/search?tbm=isch&q=",
-            engine7: "https://www.reddit.com/search/?q=",
             engine8: `https://${languageCode}.wikipedia.org/wiki/Special:Search?search=`,
-            engine9: "https://www.quora.com/search?q="
         };
 
         if (searchTerm !== "") {
