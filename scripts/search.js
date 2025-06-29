@@ -48,7 +48,7 @@ searchWith.addEventListener("click", function (event) {
 
 function toggleSearchEngines(category) {
     const defaultItems = {
-        "search-with": "engine0",
+        "search-with": "engine4",
         "search-on": "engine5",
     };
     const checkeditem = localStorage.getItem(`selectedSearchEngine-${category}`) || defaultItems[category];
@@ -207,17 +207,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (searchTerm !== "") {
             if (selectedOption === "engine0") {
-                try {
-                    if (isFirefox) {
-                        browser.search.query({ text: searchTerm });
-                    } else {
-                        chrome.search.query({ text: searchTerm });
-                    }
-                } catch (error) {
-                    // Fallback to Google if an error occurs
-                    var fallbackUrl = searchEngines.engine1 + encodeURIComponent(searchTerm);
+                    var fallbackUrl = searchEngines.engine4 + encodeURIComponent(searchTerm);
                     window.location.href = fallbackUrl;
-                }
             } else {
                 var searchUrl = searchEngines[selectedOption] + encodeURIComponent(searchTerm);
                 window.location.href = searchUrl;
