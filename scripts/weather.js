@@ -5,7 +5,7 @@
  * You should have received a copy of the GNU General Public License along with this program.
  * If not, see <https://www.gnu.org/licenses/>.
  */
-
+localStorage.setItem("locationHidden", true)
 document.addEventListener("DOMContentLoaded", function () {
     const hideWeather = document.getElementById("hideWeather");
     const hideWeatherCheckbox = document.getElementById("hideWeatherCheckbox");
