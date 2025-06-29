@@ -196,6 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
         var searchEngines = {
             engine4: "https://search.brave.com/search?q=",
             engine8: `https://${languageCode}.wikipedia.org/wiki/Special:Search?search=`,
+            engine9: "https://www.wolframalpha.com/input?i=",
         };
 
         if (searchTerm !== "") {
