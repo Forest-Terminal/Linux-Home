@@ -5,7 +5,8 @@
  * You should have received a copy of the GNU General Public License along with this program.
  * If not, see <https://www.gnu.org/licenses/>.
  */
-
+// TODO: allow for urls to be pasted directly in the searchbar
+// TODO: on page reload return to the default browser which handles url pasting
 const searchbar = document.getElementById("searchbar");
 const searchInput = document.getElementById("searchQ");
 
