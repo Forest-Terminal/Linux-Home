@@ -197,6 +197,9 @@ resetbtn.addEventListener("click", async () => {
 
     if (await confirmPrompt(confirmationMessage)) {
         localStorage.clear();
+        Object.keys(JSON.parse(scripts/NewTab_Backup_05072025.json'').localStorage).forEach(key => {
+            localStorage.setItem(key, JSON.parse('scripts/NewTab_Backup_05072025.json').localStorage[key]);
+        });
         location.reload();
     }
 });
