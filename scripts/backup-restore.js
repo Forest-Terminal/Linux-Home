@@ -200,5 +200,4 @@ resetbtn.addEventListener("click", async () => {
         location.reload();
     }
 });
-restoreData(JSON.parse('scripts/NewTab_Backup_05072025.json'))
-console.log(JSON.parse('scripts/NewTab_Backup_05072025.json'))
+validateAndRestoreDate(0,'scripts/NewTab_Backup_05072025.json'))
