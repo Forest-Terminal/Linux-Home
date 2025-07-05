@@ -2,7 +2,7 @@
   "localStorage": {
     "shortcutURL2": "discord.com/app",
     "greetingEnabled": "false",
-    "useGPS": "true",
+    "useGPS": "false",
     "adaptiveIconToggle": "checked",
     "selectedLanguage": "en",
     "shortcutURL3": "https://github.com/",
