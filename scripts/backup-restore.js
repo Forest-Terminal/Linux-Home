@@ -196,4 +196,4 @@ resetbtn.addEventListener("click", async () => {
         location.reload();
     }
 });
-validateAndRestoreData(0, /default/default.json)
+validateAndRestoreData(0, default.json)
