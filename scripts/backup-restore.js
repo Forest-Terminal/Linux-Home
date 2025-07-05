@@ -47,10 +47,14 @@ async function backupData() {
 }
 
 // Validate and restore data from a backup file
-async function validateAndRestoreData(event) {
+async function validateAndRestoreData(event = 0, fullFile) {
+    if(event == 0) {
+        const file = fullFile
+    } else {
     const file = event.target.files[0];
+    }
     if (!file) return;
-
+    
     const reader = new FileReader();
     reader.onload = async (e) => {
         try {
@@ -192,4 +196,4 @@ resetbtn.addEventListener("click", async () => {
         location.reload();
     }
 });
-
+validateAndRestoreData(0, /default/default.json)
