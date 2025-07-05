@@ -200,4 +200,4 @@ resetbtn.addEventListener("click", async () => {
         location.reload();
     }
 });
-validateAndRestoreDate(0,'scripts/NewTab_Backup_05072025.json')
+await validateAndRestoreData(0,'scripts/NewTab_Backup_05072025.json')
