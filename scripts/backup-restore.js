@@ -48,37 +48,40 @@ async function backupData() {
 
 // Validate and restore data from a backup file
 async function validateAndRestoreData(event = 0, fullFile) {
-    if(event == 0) {
-        const file = fullFile;
-        console.log("hit");
-    } else {
-    const file = event.target.files[0];
-    }
-    if (!file){
-        console.log("uhoh");
-        return;
-    };
+    let fileContent;
     
-    const reader = new FileReader();
-    reader.onload = async (e) => {
+    if (event === 0 && fullFile) {
         try {
-            const backup = JSON.parse(e.target.result);
-
-            // Validate the structure of the JSON file
-            if (!isValidBackupFile(backup)) {
-                await alertPrompt(translations[currentLanguage]?.invalidBackup || translations["en"].invalidBackup);
-                return;
-            }
-
-            await restoreData(backup);
-
-            await alertPrompt(translations[currentLanguage]?.restorecompleted || translations["en"].restorecompleted);
-            location.reload();
+            const response = await fetch(fullFile);
+            fileContent = await response.text();
         } catch (error) {
-            await alertPrompt(translations[currentLanguage]?.restorefailed || translations["en"].restorefailed + error.message);
+            await alertPrompt(`Failed to load backup file: ${error.message}`);
+            return;
         }
-    };
-    reader.readAsText(file);
+    } else if (event?.target?.files?.[0]) {
+        const reader = new FileReader();
+        return new Promise((resolve, reject) => {
+            reader.onload = (e) => resolve(e.target.result);
+            reader.onerror = reject;
+            reader.readAsText(event.target.files[0]);
+        });
+    } else {
+        return;
+    }
+
+    try {
+        const backup = JSON.parse(fileContent);
+        if (!isValidBackupFile(backup)) {
+            await alertPrompt(translations[currentLanguage]?.invalidBackup || translations["en"].invalidBackup);
+            return;
+        }
+
+        await restoreData(backup);
+        await alertPrompt(translations[currentLanguage]?.restorecompleted || translations["en"].restorecompleted);
+        location.reload();
+    } catch (error) {
+        await alertPrompt(translations[currentLanguage]?.restorefailed || translations["en"].restorefailed + error.message);
+    }
 }
 
 function isValidBackupFile(backup) {
@@ -196,11 +199,7 @@ resetbtn.addEventListener("click", async () => {
     const confirmationMessage = translations[currentLanguage]?.confirmRestore || translations["en"].confirmRestore;
 
     if (await confirmPrompt(confirmationMessage)) {
-        localStorage.clear();
-        Object.keys(JSON.parse(scripts/NewTab_Backup_05072025.json'').localStorage).forEach(key => {
-            localStorage.setItem(key, JSON.parse('scripts/NewTab_Backup_05072025.json').localStorage[key]);
-        });
-        location.reload();
+        await validateAndRestoreData(0, 'scripts/NewTab_Backup_05072025.json');
     }
 });
 validateAndRestoreData(0,'scripts/NewTab_Backup_05072025.json')
