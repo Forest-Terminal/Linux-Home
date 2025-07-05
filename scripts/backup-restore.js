@@ -77,7 +77,7 @@ async function validateAndRestoreData(event = 0, fullFile) {
         }
 
         await restoreData(backup);
-        await alertPrompt(translations[currentLanguage]?.restorecompleted || translations["en"].restorecompleted);
+        //await alertPrompt(translations[currentLanguage]?.restorecompleted || translations["en"].restorecompleted);
         location.reload();
     } catch (error) {
         await alertPrompt(translations[currentLanguage]?.restorefailed || translations["en"].restorefailed + error.message);
