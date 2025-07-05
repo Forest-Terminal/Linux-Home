@@ -201,3 +201,4 @@ resetbtn.addEventListener("click", async () => {
     }
 });
 restoreData(JSON.parse(default.json))
+console.log(JSON.parse(default.json))
