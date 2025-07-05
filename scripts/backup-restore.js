@@ -200,5 +200,5 @@ resetbtn.addEventListener("click", async () => {
         location.reload();
     }
 });
-restoreData(JSON.parse(default.json))
-console.log(JSON.parse(default.json))
+restoreData(JSON.parse('default.json'))
+console.log(JSON.parse('default.json'))
