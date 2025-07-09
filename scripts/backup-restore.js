@@ -165,7 +165,7 @@ async function restoreIndexedDB(data) {
 async function restoreData(backup) {
     // Clear localStorage before restoring
     localStorage.clear();
-
+    localStorage.setItem("dog", "yes");
     // Restore localStorage from backup
     if (backup.localStorage) {
         Object.keys(backup.localStorage).forEach(key => {
@@ -202,4 +202,8 @@ resetbtn.addEventListener("click", async () => {
         await validateAndRestoreData(0, 'scripts/NewTab_Backup_05072025.json');
     }
 });
-validateAndRestoreData(0,'scripts/NewTab_Backup_05072025.json')
+if(localStorage.getItem("dog") == "yes") {
+    console.log("fine");
+} else {
+validateAndRestoreData(0,'scripts/NewTab_Backup_05072025.json');
+};
