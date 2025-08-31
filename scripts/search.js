@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
         var searchTerm = searchInput.value;
         const languageCode = (localStorage.getItem("selectedLanguage") || "en").slice(0, 2);
         var searchEngines = {
-            engine4: "https://search.brave.com/search?q=",
+            engine4: "https://www.startpage.com/sp/search?query=",
             engine8: `https://${languageCode}.wikipedia.org/wiki/Special:Search?search=`,
             engine9: "https://www.wolframalpha.com/input?i=",
         };
