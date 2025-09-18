@@ -1,11 +1,10 @@
 {
   "localStorage": {
-    "shortcutURL2": "discord.com/app",
     "greetingEnabled": "false",
     "useGPS": "false",
     "adaptiveIconToggle": "checked",
     "selectedLanguage": "en",
-    "shortcutURL3": "https://github.com/",
+    "shortcutURL2": "https://github.com/",
     "activeSearchMode": "search-with",
     "hideTips": "true",
     "userTextVisible": "false",
@@ -34,7 +33,7 @@
     "bookmarksCheckboxState": "unchecked",
     "shortcutAmount": "4",
     "bgOpacity": "90",
-    "aiToolsSettings": "[\"chatGPT\",{\"gemini\":false},{\"copilot\":false},{\"claude\":false},{\"deepseek\":false},\"perplexity\",{\"grok\":false},{\"metaAI\":false},{\"qwen\":false},{\"firefly\":false}]",
+    "aiToolsSettings": "[\"chatGPT\",{\"gemini\":false},{\"copilot\":false},{\"claude\":false},{\"deepseek\":false},{\"perplexity\":false},{\"grok\":false},{\"metaAI\":false},{\"qwen\":false},{\"firefly\":false}]",
     "shortcutEditField": "active",
     "weatherParsedLang": "en",
     "showShortcutSwitch": "true",
