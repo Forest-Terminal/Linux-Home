@@ -301,12 +301,7 @@ function toggleAITools(event) {
     if (event) event.stopPropagation();
 
     if (isAIToolVisible) {
-        // Hide AI Tool panel
-        if (shortcutsCheckbox.checked) {
-            shortcuts.style.display = "flex";
-        } else {
-            shortcuts.style.display = "none";
-        }
+
 
         aiToolName.style.opacity = "0";
         aiToolName.style.gap = "0";
@@ -316,9 +311,6 @@ function toggleAITools(event) {
             aiToolName.style.display = "none";
         }, 500);
     } else {
-        // Show AI Tool panel
-        shortcuts.style.display = "none";
-        aiToolName.style.display = "flex";
 
         setTimeout(() => {
             aiToolName.style.opacity = "1";
