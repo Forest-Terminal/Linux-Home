@@ -205,10 +205,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 if(/^@w/.test(searchTerm)) {
                     var fallbackUrl = searchEngines.engine8 + encodeURIComponent(searchTerm);
                     window.location.href = fallbackUrl;
-                } else if(/^a/.test(searchTerm)) {
+                } else if(/^@a/.test(searchTerm)) {
                     var fallbackUrl = searchEngines.engine9 + encodeURIComponent(searchTerm);
                     window.location.href = fallbackUrl;
                 } else {
+                    alert(/^@w/.test(searchTerm));
                     var fallbackUrl = searchEngines.engine4 + encodeURIComponent(searchTerm);
                     window.location.href = fallbackUrl;
                 }
