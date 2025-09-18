@@ -202,8 +202,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (searchTerm !== "") {
             if (selectedOption === "engine0") {
+                if(/^@w/.test(searchTerm)) {
+                    var fallbackUrl = searchEngines.engine8 + encodeURIComponent(searchTerm);
+                    window.location.href = fallbackUrl;
+                } else if(/^a/.test(searchTerm)) {
+                    var fallbackUrl = searchEngines.engine9 + encodeURIComponent(searchTerm);
+                    window.location.href = fallbackUrl;
+                } else {
                     var fallbackUrl = searchEngines.engine4 + encodeURIComponent(searchTerm);
                     window.location.href = fallbackUrl;
+                }
             } else {
                 var searchUrl = searchEngines[selectedOption] + encodeURIComponent(searchTerm);
                 window.location.href = searchUrl;
