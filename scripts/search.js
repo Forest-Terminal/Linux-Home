@@ -208,9 +208,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     var fallbackUrl = searchEngines.engine9 + encodeURIComponent(searchTerm);
                     window.location.href = fallbackUrl;
                 } else {
-                    alert(/^@w/.test(searchTerm));
                     var fallbackUrl = searchEngines.engine4 + encodeURIComponent(searchTerm);
-                    //window.location.href = fallbackUrl;
+                    window.location.href = fallbackUrl;
                 }
         }
     }
