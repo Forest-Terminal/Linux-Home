@@ -27,9 +27,8 @@ const aiTools = aiToolsRaw.map(tool => ({
 
 // DOM Elements
 const aiToolName = document.getElementById("toolsCont");
-
-const aiToolsIcon = document.getElementById("aiToolsIcon");
 const shortcuts = document.getElementById("shortcutsContainer");
+const aiToolsIcon = document.getElementById("aiToolsIcon");
 const aiToolsSettingsModal = document.getElementById("aiToolsSettingsModal");
 const aiToolsSettingsOverlay = document.getElementById("aiToolsSettingsOverlay");
 const aiToolsForm = document.getElementById("aiToolsForm");
@@ -317,9 +316,10 @@ function toggleAITools(event) {
             aiToolName.style.display = "none";
         }, 500);
     } else {
-    // Show AI Tool panel
+        // Show AI Tool panel
         shortcuts.style.display = "none";
         aiToolName.style.display = "flex";
+
         setTimeout(() => {
             aiToolName.style.opacity = "1";
             aiToolName.style.transform = "translateX(0)";
@@ -464,7 +464,6 @@ document.addEventListener("DOMContentLoaded", function () {
             aiToolsCont.style.display = "none";
             saveDisplayStatus("aiToolsDisplayStatus", "none");
             aiToolsEditField.classList.add("inactive");
-            toggleAITools();
         }
     });
 
