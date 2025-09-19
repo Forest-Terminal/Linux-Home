@@ -33,7 +33,6 @@
     "bookmarksCheckboxState": "unchecked",
     "shortcutAmount": "4",
     "bgOpacity": "90",
-    "aiToolsSettings": "[\"chatGPT\",{\"gemini\":false},{\"copilot\":false},{\"claude\":false},{\"deepseek\":false},{\"perplexity\":false},{\"grok\":false},{\"metaAI\":false},{\"qwen\":false},{\"firefly\":false}]",
     "shortcutEditField": "active",
     "weatherParsedLang": "en",
     "showShortcutSwitch": "true",
