@@ -9,10 +9,10 @@
 // Define the list of available AI tools and their default visibility
 const aiToolsRaw = [
     { id: "chatGPT", visible: true, order: 0 },
-    { id: "gemini", visible: true, order: 1 },
-    { id: "copilot", visible: true, order: 2 },
-    { id: "claude", visible: true, order: 3 },
-    { id: "deepseek", visible: true, order: 4 },
+    { id: "gemini", visible: false, order: 1 },
+    { id: "copilot", visible: false, order: 2 },
+    { id: "claude", visible: false, order: 3 },
+    { id: "deepseek", visible: false, order: 4 },
     { id: "perplexity", visible: false, order: 5 },
     { id: "grok", visible: false, order: 6 },
     { id: "metaAI", visible: false, order: 7 },
