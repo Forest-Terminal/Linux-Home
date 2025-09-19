@@ -305,7 +305,7 @@ function toggleAITools(event) {
         if (shortcutsCheckbox.checked) {
             shortcuts.style.display = "flex";
         } else {
-            shortcuts.style.display = "none";
+            shortcuts.style.display = "flex";
         }
 
         aiToolName.style.opacity = "0";
@@ -317,7 +317,7 @@ function toggleAITools(event) {
         }, 500);
     } else {
         // Show AI Tool panel
-        shortcuts.style.display = "none";
+        shortcuts.style.display = "flex";
         aiToolName.style.display = "flex";
 
         setTimeout(() => {
